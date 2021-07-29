@@ -1,0 +1,16 @@
+###
+Get http://localhost:3003/student/age?id=3
+
+
+###
+Post http://localhost:3003/student/create
+Content-Type: application/json
+
+{
+   "id": "002" ,
+   "name":  "Daniel",
+   "email": "daniel@gmail.com",
+   "birthdate": "1990-08-02" ,
+   "class_id":"1"
+   }
+
