@@ -7,10 +7,16 @@ Post http://localhost:3003/student/create
 Content-Type: application/json
 
 {
-   "id": "002" ,
-   "name":  "Daniel",
-   "email": "daniel@gmail.com",
-   "birthdate": "1990-08-02" ,
+   "id": "001" ,
+   "name":  "Camily",
+   "email": "camily@gmail.com",
+   "birthdate": "2002-09-02" ,
    "class_id":"1"
    }
+
+###
+Delete http://localhost:3003/student/remove?id=1
+
+###
+put  http://localhost:3003/student/remove/class?id=3
 
