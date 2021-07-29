@@ -14,7 +14,6 @@ export default async function createTeacher(
          res.statusCode = 422
          throw "'id', 'name', 'email' e 'birthdate' são obrigatórios"
       }
- 
   
     const newTeacher: teacher = { id, name, email, birthdate, class_id }
 
