@@ -8,11 +8,11 @@ export default async function createTeacher(
 ): Promise<void> {
    try {
 
-      const { id, name, email, birthdate, class_id } = req.body
+      const { id, name, email, birthdate, class_id} = req.body
 
-      if (!id || !name || !email || !birthdate|| !class_id ) {
+      if (!id || !name || !email || !birthdate) {
          res.statusCode = 422
-         throw "'id', 'name', 'email', 'birthdate' e 'class_id'são obrigatórios"
+         throw "'id', 'name', 'email' e 'birthdate' são obrigatórios"
       }
  
   

@@ -37,7 +37,7 @@ export type student = {
    name: string
    email:string
    birthdate:Date
-   class_id:Number
+   class_id?:Number
 }
 
 export type teacher = {
@@ -45,5 +45,5 @@ export type teacher = {
    name: string
    email:string
    birthdate:Date
-   class_id:Number
+   class_id?:Number
 }
