@@ -19,7 +19,7 @@ export default async function createTeacher(
 
       await connection('labenu_system_teacher').insert(newTeacher)
 
-      res.status(201).send("novo professor inserido")
+      res.status(201).send("novo professor inserido com sucesso")
 
    } catch (error:any) {
 

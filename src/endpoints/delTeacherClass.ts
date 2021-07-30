@@ -18,7 +18,7 @@ export default async function delTeacherClass(
 
       
 
-        res.status(200).send(`Removido da Classe.`)
+        res.status(200).send(`Removido da Turma.`)
     } catch (error: any) {
         if (typeof error === "string") {
             res.send(error)
