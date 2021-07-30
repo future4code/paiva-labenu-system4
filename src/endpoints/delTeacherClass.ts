@@ -8,7 +8,7 @@ export default async function delTeacherClass(
     try {
         const id = Number(req.query.id)
         if(isNaN(id)){
-          throw new Error('Id must be a number.')
+          throw new Error('Id precisa ser um numero valido.')
         }
     
        await connection('labenu_system_teacher')
@@ -18,7 +18,7 @@ export default async function delTeacherClass(
 
       
 
-        res.status(200).send(`Removed from class.`)
+        res.status(200).send(`Removido da Classe.`)
     } catch (error: any) {
         if (typeof error === "string") {
             res.send(error)
