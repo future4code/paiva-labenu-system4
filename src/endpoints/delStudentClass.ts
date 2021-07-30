@@ -15,7 +15,7 @@ export default async function delStudentClass(
           .update({class_id: null})
           .where('id', id)
     
-        res.status(200).send('Removido da classe.')
+        res.status(200).send('Removido da turma.')
     } catch (error: any) {
         if (typeof error === "string") {
             res.send(error)
