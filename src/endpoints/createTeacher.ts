@@ -29,7 +29,7 @@ export default async function createTeacher(
       } else {
 
          console.log(error.sqlMessage || error.message);
-         res.status(500).send("Ops! Um erro inesperado ocorreu =/")
+         res.status(500).send("Ops! Um erro inesperado ocorreu")
       }
 
    }
