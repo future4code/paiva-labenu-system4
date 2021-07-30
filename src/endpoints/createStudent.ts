@@ -10,14 +10,12 @@ export default async function createStudent(
 
       const { id, name, email, birthdate, class_id } = req.body
 
-      if (!id || !name || !email || !birthdate|| !class_id ) {
+      if (!id || !name || !email || !birthdate ) {
          res.statusCode = 422
-         throw "'id', 'name', 'email', 'birthdate' e 'class_id'são obrigatórios"
+         throw "'id', 'name', 'email' e 'birthdate' são obrigatórios"
       }
  
   
-     
-
     const newStudent: student = { id, name, email, birthdate, class_id }
 
       await connection('labenu_system_student').insert(newStudent)

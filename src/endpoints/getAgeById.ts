@@ -17,7 +17,7 @@ export default async function getAgeById(
         .where('id', id)
         
         const nameStudent = result[0].name
-        console.log(nameStudent, "MEU NOME AQUI EIN!!")
+
         const age = new Date().getFullYear() - new Date(result[0].birthdate).getFullYear()
 
         res.status(201).send(`A idade do(a) aluno(a): ${nameStudent} é ${age} anos`)
