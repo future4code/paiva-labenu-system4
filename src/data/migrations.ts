@@ -21,7 +21,7 @@ const createTables = () => connection
       name VARCHAR(255) NOT NULL
      );    
 
-     CREATE TABLE labenu_system_class(
+   CREATE TABLE labenu_system_class(
       id INT NOT NULL PRIMARY KEY,
       name VARCHAR(255) NOT NULL,
       start_date DATE NOT NULL,
@@ -30,7 +30,7 @@ const createTables = () => connection
       type ENUM('full-time','night') DEFAULT 'full-time'
       );
       
-     CREATE TABLE labenu_system_student(
+   CREATE TABLE labenu_system_student(
       id INT NOT NULL PRIMARY KEY,
       name VARCHAR(50) NOT NULL,
       email VARCHAR(50) UNIQUE NOT NULL,
@@ -39,15 +39,29 @@ const createTables = () => connection
       FOREIGN KEY (class_id) REFERENCES labenu_system_class(id)
       );
       
+   CREATE TABLE labenu_system_teacher(
+      id INT NOT NULL PRIMARY KEY,
+      name VARCHAR(255) NOT NULL,
+      email VARCHAR(255) UNIQUE NOT NULL,
+      birthdate DATE NOT NULL,
+      class_id INT NOT NULL,
+      FOREIGN KEY (class_id) REFERENCES labenu_system_class(id)
+      );
 
-      CREATE TABLE labenu_system_teacher(
-         id INT NOT NULL PRIMARY KEY,
-         name VARCHAR(255) NOT NULL,
-         email VARCHAR(255) UNIQUE NOT NULL,
-         birthdate DATE NOT NULL,
-         class_id INT NOT NULL,
-         FOREIGN KEY (class_id) REFERENCES labenu_system_class(id)
-         );
+   CREATE TABLE labenu_system_students_hobbies(
+      student_id INT NOT NULL,
+      FOREIGN KEY (student_id) REFERENCES labenu_system_student(id),
+      hobbies_id INT NOT NULL,
+      FOREIGN KEY (hobbies_id) REFERENCES labenu_system_hobbies(id)
+      );
+
+   CREATE TABLE labenu_system_teachers_expertise(
+      teacher_id INT NOT NULL UNIQUE,
+      FOREIGN KEY (teacher_id) REFERENCES labenu_system_teacher(id),
+      expertise_id INT NOT NULL,
+      FOREIGN KEY (expertise_id) REFERENCES labenu_system_expertise(id)
+      );
+        
    
      `)
    .then(() => { console.log("Tabelas criadas") })
