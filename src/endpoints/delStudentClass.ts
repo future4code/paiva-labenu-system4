@@ -8,14 +8,14 @@ export default async function delStudentClass(
     try {
         const id = Number(req.query.id)
         if(isNaN(id)){
-          throw new Error('Id must be a number.')
+          throw new Error('Id precisa ser um numero valido.')
         }
     
         await connection('labenu_system_student')
           .update({class_id: null})
           .where('id', id)
     
-        res.status(200).send('Removed from class.')
+        res.status(200).send('Removido da classe.')
     } catch (error: any) {
         if (typeof error === "string") {
             res.send(error)
